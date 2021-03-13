@@ -5,4 +5,4 @@
 <p>No se utilizó Bootstrap.</p>
 
 ## Acceso al Sitio
-<a href="https://rbayarri.github.io/dreams-hotel/" target="blank">https://rbayarri.github.io/dreams-hotel/</a>
+<a href="https://rbayarri.github.io/dreams-hotel/" target="_blank">https://rbayarri.github.io/dreams-hotel/</a>
