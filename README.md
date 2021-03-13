@@ -1,8 +1,8 @@
 # Dreams Hotel
 
-One page realizado durante el curso de Programación Web Inicial
-Para su elaboración se utilizó HTML5, CSS3 y Javascript.
-No se utilizó Bootstrap.
+<p>One page realizada durante el curso de Programación Web Inicial.</p>
+<p>Para su elaboración se utilizó HTML5, CSS3 y Javascript.</p>
+<p>No se utilizó Bootstrap.</p>
 
 ## Acceso al Sitio
-https://rbayarri.github.io/dreams-hotel/
+<a href="https://rbayarri.github.io/dreams-hotel/" target="_blank">https://rbayarri.github.io/dreams-hotel/</a>
