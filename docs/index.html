@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dreams Hotel</title>
+
+  <!-- CÓDIGO DE FAVICON -->
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x1D14" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+<!-- FIN CÓDIGO FAVICON -->
+
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata%7CNoto+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css?ver=1.0" type="text/css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/index.js"></script>
+
+</head>
+<body>
+  <nav class="p-fixed-top navbar bg-white">
+    <div class="container">
+      <ul class="float-left flex-center d-none-3">
+        <li class="redes-item"<a href="#"><img src="images/logo.png" alt="Dreams Hotel Imagen Menu" class="icon-med"></a></li>
+        <li class="redes-item"><a href="https://www.facebook.com" target="_blank"><img src="images/iconos/redesfacebook.png" alt="Facebook" class="icon-med pad-top-10 pad-right-5 pad-bot-15 pad-left-5"></a></li>
+        <li class="redes-item"><a href="https://www.instagram.com" target="_blank"><img src="images/iconos/redesinstagram.png" alt="Instagram" class="icon-med pad-top-10 pad-right-5 pad-bot-15 pad-left-5"></a></li>
+      </ul>
+      <ul class="float-right d-none-3" id="menu-principal">
+        <li class="menu-item"><a href="#habitaciones" class="item-link pad-left-15 pad-right-15 pad-top-25 pad-bot-25" id="menu-item-1">HABITACIONES</a></li>
+        <li class="menu-item"><a href="#restaurant" class="item-link pad-left-15 pad-right-15 pad-top-25 pad-bot-25" id="menu-item-2">RESTAURANT</a></li>
+        <li class="menu-item"><a href="#atracciones" class="item-link pad-left-15 pad-right-15 pad-top-25 pad-bot-25" id="menu-item-3">ATRACCIONES</a></li>
+        <li class="menu-item"><a href="#contacto" class="item-link pad-left-15 pad-right-15 pad-top-25 pad-bot-25" id="menu-item-4">CONTACTO</a></li>
+      </ul>
+      <i class="fa fa-bars inline-block pad-15 p-fixed-top" onclick="menu();" style="background-color: white; left:0; right: auto; cursor: pointer;" id="barra"></i>
+    </div> <!-- CIERRA CONTAINER NAV -->
+  </nav>
+  <header class="color-white">
+    <div class="container">
+      <div class="titulos-encabezado">
+        <h1 class="font-30 center">Bienvenidos a</h1>
+        <h1 class="font-80 center">Dreams Hotel</h1>
+      </div>
+    </div> <!-- CIERRA CONTAINER TITULOS. NO HACE FALTA EL CONTENEDOR PERO SI SE SACA HAY QUE SACARLE OVERFLOW HIDEEN -->
+    <div class="form center"> <!-- FONDO DEL FORMULARIO -->
+      <div class="container">
+          <h3 class="center">Reservá tu habitación</h3>
+          <form method="POST" onsubmit="alert('Consulta en base de datos disponibilidad de habitaciones')">
+            <label for="fechadellegada">Fecha de llegada</label>
+            <input type="date" name="fechadellegada" id="fechadellegada" required>
+            <label for="fechadesalida">Fecha de salida</label>
+            <input type="date" name="fechadesalida" id="fechadesalida" required>
+            <label for="cantidad_adultos">Adultos</label>
+            <select name="cantidad_adultos" id="cantidad_adultos">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            <label for="cantidad_niños">Niños</label>
+            <select name="cantidad_niños" id="cantidad_niños">
+              <option value="0" selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+            <input class="boton boton-grande" type="submit" value="Buscar">
+          </form>
+      </div> <!-- CIERRA CONTAINER -->
+    </div> <!-- CIERRA FONDO DEL FORMULARIO -->
+  </header>
+  <main>
+    <section id="habitaciones">
+      <div class="container">
+        <div>
+          <div class="col-12 pad-bot-15">  
+            <h2 class="font-30 center">Habitaciones</h2>
+          </div>
+        </div>
+        <div>
+          <div class="col-12">
+            <div class="col-6">
+              <article id="simple">
+                <h3 class="pad-bot-15 center">Habitación Simple</h3>
+                <img class="opacidad-85" src="images/habitaciones/individual.jpg" alt="Habitación para 1 Persona">
+                <a class="boton" href="#modal-simple">Ver Más</a>
+              </article>
+            </div>
+            <div class="col-6">
+              <article id="doble">
+                <h3 class="pad-bot-15 center">Habitación Doble</h3>
+                <img class="opacidad-85" src="images/habitaciones/doble.jpg" alt="Habitación para 2 Personas">
+                <a class="boton" href="#modal-doble">Ver Más</a>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-12">
+            <div class="col-6">
+              <article id="triple">
+                <h3 class="pad-bot-15 center">Habitación Triple</h3>
+                <img class="opacidad-85" src="images/habitaciones/triple.jpg" alt="Habitación Triple">
+                <a class="boton" href="#modal-triple">Ver Más</a>
+              </article>
+            </div>
+            <div class="col-6">
+              <article id="grupal">
+                <h3 class="pad-bot-15 center">Habitación Grupal</h3>
+                <img class="opacidad-85" src="images/habitaciones/grupal.jpg" alt="Habitación Grupal">
+                <a class="boton" href="#modal-grupal">Ver Más</a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="restaurant">
+      <div class=" col-12 bg-restaurant">
+        <div class="cointainer">
+          <h2 class="titulos titulos-restaurant color-white font-30 center" id="restaurante">Restaurant</h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-12 d-none-3">
+          <ul class="lista-restaurante">
+            <li class="item-restaurante pad-30"><a href="#modal-entradas">ENTRADAS</a></li>
+            <li class="item-restaurante pad-30"><a href="#modal-acomp">PARA ACOMPAÑAR</a></li>
+            <li class="item-restaurante pad-30"><a href="#modal-carnes">CARNES</a></li>
+            <li class="item-restaurante pad-30"><a href="#modal-elaborados">ELABORADOS</a></li>
+            <li class="item-restaurante pad-30"><a href="#modal-postres">POSTRES</a></li>
+            <li class="item-restaurante pad-30"><a href="#modal-vinos">VINOS</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-12">
+          <div id="entradas" class="col-6 bg-entradas center opacidad-95">
+            <h3 class="titulos color-white menu center">Entradas</h3>
+            <a href="#modal-entradas" class="boton menu-boton">Ver Más</a>
+          </div>
+          <div id="acomp" class="col-6 bg-acompaña center opacidad-95">
+            <h3 class="titulos color-white menu center">Para acompañar</h3>
+            <a href="#modal-acomp" class="boton menu-boton">Ver Más</a>
+          </div>
+        </div>
+        <div class="col-12">
+          <div id="carnes" class="col-6 bg-carnes center opacidad-95">
+            <h3 class="titulos color-white menu center">Carnes</h3>
+            <a href="#modal-carnes" class="boton menu-boton">Ver Más</a>
+          </div>
+          <div id="elaborados" class="col-6 bg-elaborados center opacidad-95">
+            <h3 class="titulos color-white menu center">Elaborados</h3>
+            <a href="#modal-elaborados" class="boton menu-boton">Ver Más</a>
+          </div>
+        </div>
+        <div class="col-12">
+          <div id="postres" class="col-6 bg-postres center opacidad-95">
+            <h3 class="titulos color-white menu center">Postres</h3>
+            <a href="#modal-postres" class="boton menu-boton">Ver Más</a>
+          </div>
+          <div id="vinos" class="col-6 bg-vinos center opacidad-95">
+            <h3 class="titulos color-white menu center">Vinos</h3>
+            <a href="#modal-vinos" class="boton menu-boton">Ver Más</a>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+    <section id="atracciones">
+      <div class="col-12 pad-bot-15">
+        <h2 class="font-30 center">Atracciones</h2>
+      </div>
+      <div class="col-12 bg-dark-gray">
+        <div class="container">
+          <!-- <article> -->
+            <p class="article color-white">Con sus avenidas amplias y arboladas, sus imponentes plazas y fuentes y su vibrante vida nocturna, gastronomía y cultura, Mendoza es un destino único en Argentina y una de las principales regiones vitivinicolas del pais. Con tantas cosas maravillosas para ver y hacer, la ubicación central del Hotel Raíces Aconcagua es la base de operaciones perfecta para el descubrimiento. Las atracciones y lugares para visitar que se enumeran a continuación son algunos de nuestros puntos favoritos, sin embargo todo lo que podrá hacer durante su estadía en Mendoza es innumerable. Nuestro personal estará encantado de poder ayudarle con recomendaciones y gestiones para experimentar los placeres que ofrece Mendoza.</p>
+          <!-- </article> -->
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="container">
+          <div class="col-6">
+            <article>
+              <h3 class="center">La Barraca Mall</h3>
+              <p>El primer lifestyle center de Mendoza, La Barraca cuenta con mas de  140 tiendas, área gourmet de restaurantes, patio de comidas, complejo de cines, área de juegos para niños y mucho mas. </p>
+            </article>
+          </div>
+          <div class="col-6">
+            <article>
+              <h3 class="center">Palmares Mall</h3>
+              <p>Este centro comercial a cielo abierto esta ubicado a 15 minutos del centro de Mendoza, cuenta con 125 tiendas, un gran patio de comidas, complejo de cines y estacionamiento.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 bg-gray">
+        <div class="container">
+          <div class="col-6">
+            <article>
+              <h3 class="center">Cerro de la Gloria</h3>
+              <p>El Cerro de la Gloria es una obra escultórica de gran magnitud que hace honor al ejercito de los Andes por su exitosa campaña libertadora. Ubicado dentro de el monumento se rige sobre una colina que ofrece las mejores vistas de la ciudad. </p>
+            </article>
+          </div>
+          <div class="col-6">
+            <article>
+              <h3 class="center">Parque Provincial San Martín</h3>
+              <p>Este parque Nacional protegido se encuentra el Cerro Aconcagua (6.962 metros) una de las montañas mas altas después del Himalaya y destino favorito de alpinistas.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="container">
+          <div class="col-6">
+            <article>
+              <h3 class="center">Centro de Convenciones</h3>
+              <p>Enclavado en el parque cívico, este complejo de tres edificios es el lugar mas grande de la ciudad para la realización de conferencia, congresos y eventos especiales. </p>
+            </article>
+          </div>
+          <div class="col-6">
+            <article>
+              <h3 class="center">Valle de Uco</h3>
+              <p>Una de las regiones vitivinicultoras mas importante de Argentina, emplazado a una hora en auto desde la ciudad de Mendoza, el valle es famoso por sus vinos Malbec y viñedos que ofrecen visitas a bodegas y catas. </p>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 bg-gray">
+        <div class="container">
+          <div class="col-6">
+            <article>
+              <h3 class="center">Cerro Penitentes</h3>
+              <p>Una de las montañas mas bellas de los Andes, Penitentes se encuentra a 4.531 metros sobre el nivel de mar y se presenta como una de las mejores alternativas para montañistas y excursionistas. </p>
+            </article>
+          </div>
+          <div class="col-6">
+            <article>
+              <h3 class="center">Puente del Inca</h3>
+              <p>Es una formación rocosa que forma un puente natura sobre el Rio  Cuevas, El Puente del Inca posee piscinas termales y diversas rutas de senderismo de distintos niveles de dificultad. </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <aside id="opinion-clientes">
+      <div class="col-12-pad-bot-15">
+        <h2 class="font-30 center">Opiniones de clientes</h2>
+      </div>
+      <div class="container">
+        <div class="col-12">
+          <div class="col-4 pad-20 left">
+            <img src="images/iconos/persona-1.png" alt="persona-1" class="icon inline-block">
+            <p class="font-14 inline-block mar-bot-20"><span class="bold">Marcos GT</span> escribió una opinión en dic. de 2019</p>
+            <img src="images/iconos/max-punt.png" alt="max-punt" class="icon-small block">
+            <h4 class="left mar-top-15 center">Céntrico y alejado a la vez, donde puedes descansar</h4>
+            <p class="italic">"El mismo se ubica en zona de rápido acceso y a pocos minutos del centro.
+              Las habitaciones cómodas, mejorar la almohadas y un mueble para trabajar serian los puntos a ver.
+              El punto donde se encuentra es estratégico y evitas estar entrando y saliendo en pleno centro en horas pico sobre todo."</p>
+          </div>
+          <div class="col-4 pad-20 left">
+            <img src="images/iconos/persona-2.png" alt="persona-1" class="icon inline-block">
+            <p class="font-14 inline-block mar-bot-20"><span class="bold">Elena Vlas</span> escribió una opinión en dic. de 2019</p>
+            <img src="images/iconos/max-punt.png" alt="max-punt" class="icon-small block">
+            <h4 class="left mar-top-15 mar-bot-15 center">Muy bonito hotel con excelente servicio</h4>
+            <p class="italic">"Muy bonito hotel con excelente servicio. Todo el personal ofrece una atención de excelente calidad. El Concierge te ofrece buenas opciones de lugares o bodegas para conocer y te ayuda con las reservas."</p>
+          </div>
+          <div class="col-4 pad-20">
+            <img src="images/iconos/persona-3.png" alt="persona-1" class="icon inline-block">
+            <p class="font-14 inline-block mar-bot-20"><span class="bold">Maira Cid</span> escribió una opinión en dic. de 2019</p>
+            <img src="images/iconos/max-punt.png" alt="max-punt" class="icon-small block">
+            <h4 class="left mar-top-15 mar-bot-15 center">Ideal para todos</h4>
+            <p class="italic">"El desayuno es muy bueno y tiene un horario amplio. Tienen estacionamiento pago (a precio razonable) pero enfrente esta un centro comercial que incluye un estacionamiento gratuito con seguridad. La habitación es muy cómoda"</p>
+          </div>
+        </div>
+      </div>
+    </aside>  
+    <section id="contacto">
+      <div class="col-12 pad-bot-15">
+        <h2 class="font-30 center">Contacto</h2>
+      </div>
+      <div class="container">
+        <div class="col-12">
+
+          <div class="col-6 pad-20">
+            <h3 class="left pad-bot-15 pad-left-15 center">Envianos tu consulta</h3>
+            <form class="contact-form" method="POST" onsubmit="alert('Su consulta ha sido enviada y será respondida a la brevedad')">
+              <input type="text" name="nombre-apellido" placeholder="Nombre y Apellido" required>
+              <input type="email" name="email" placeholder="Email" required>
+              <textarea rows="10" cols="50" placeholder="Escribe tu consulta" required></textarea>
+              <input class="boton boton-formulario inline-block" type="submit" value="Enviar">
+            </form>
+          </div>
+          <div class="col-6 pad-20">
+            <h3 class="left pad-bot-15 pad-left-15 center">Contactanos</h3>
+            <div class="bg-dir">
+              <p>Avenida Siempre Viva 123</p>
+              <p>Potrerillos. Luján de Cuyo</p>
+              <p>Mendoza. Argentina</p>
+            </div>
+            <a class="block bg-tel" style="display:block" href="tel:+542612516353">+54 (0261) 152-516353</a>
+            <a class="block bg-mail" style="display:block" href="mailto:reservas@dreamshotel.com">reservas@dreamshotel.com</a>
+            <h3 class="left pad-15 pad-top-25 center">Seguínos en las redes</h3>
+            <div class="pad-left-20">
+              <a href="https://www.facebook.com"><img class="icon-m" src="images/iconos/redesfacebook.png" alt="Facebook"></a>
+              <a href="https://www.instagram.com"><img class="icon-m" src="images/iconos/redesinstagram.png" alt="Instagram"></a>
+              <img class="icon-m" src="images/iconos/redeswhatsapp.png" alt="Whatsapp">
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="left pad-20 center">¿Cómo llegar?</h3>
+        </div>
+        <div class="col-12">     
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12448.408551788205!2d-72.61451383693169!3d-38.73841835340199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614d400c6301673%3A0x6dbfd05f0ff1b93a!2sHotel%20Dreams!5e0!3m2!1ses!2sar!4v1572893642311!5m2!1ses!2sar"></iframe>
+        </div>
+      </div>  
+    </section>
+  </main>
+  <footer class="pad-top-20">
+    <div class="container">
+      <div class="col-12">    
+        <div class="col-2 d-none-3">
+          <a href="#"><img src="images/logo.png" alt="Logo Hotel"></a>
+        </div>
+        <div class="col-2 center">
+          <a href="http://qr.afip.gob.ar/?qr=Dasa13QH4gCQHCDhDm08Mw,," target="f960afipinfo"><img height="120" src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" alt="QR Afip"></a>
+        </div>
+        <div class="col-2 footer-color d-none-3">
+          HABITACIONES
+          <ul class="pad-top-15 font-12">
+            <li><a class="footer-color" href="#simple">Habitación Simple</a></li>
+            <li><a class="footer-color" href="#doble">Habitación Doble</a></li>
+            <li><a class="footer-color" href="#triple">Habitación Triple</a></li>
+            <li><a class="footer-color" href="#grupal">Habitación Grupal</a></li>
+          </ul>
+        </div>
+        <div class="col-2 footer-color d-none-2">
+          RESTAURANT
+          <ul class="pad-top-15 font-12" >
+            <li><a class="footer-color" href="#entradas">Entradas</a></li>
+            <li><a class="footer-color" href="#acomp">Para Acompañar</a></li>
+            <li><a class="footer-color" href="#carnes">Carnes</a></li>
+            <li><a class="footer-color" href="#elaborados">Elaborados</a></li>
+            <li><a class="footer-color" href="#postres">Postres</a></li>
+            <li><a class="footer-color" href="#vinos">Vinos</a></li>
+          </ul>
+        </div>
+        <div class="col-2 d-none">
+          <a class="footer-color" href="#atracciones">ATRACCIONES</a>
+        </div>
+        <div class="col-2 footer-color">
+          CONTACTO
+          <p class="pad-top-10 footer-color font-12">Avenida Siempre Viva 123. Potrerillos. Luján de Cuyo. Mendoza. Argentina</p>
+          <a class="block footer-color pad-top-10 font-12" style="display:block" href="tel:+542612516353">+54 (0261) 152-516353</a>
+          <a class="block footer-color pad-top-10 font-12" style="display:block" href="mailto:reservas@dreamshotel.com">reservas@dreamshotel.com</a>
+        </div>
+      </div>
+      <div class="col-12">
+        <p class="font-12 footer-color float-right pad-25 pad-bot-10">Desarrollado por Renzo Bayarri</p>
+      </div>
+    </div>  
+  </footer>
+  <div id="modal-simple" class="modal">
+    <div class="container-modal">
+      <a href="#/" class="x-modal">x</a>
+      <h3 class="titulo-habitacion center">Habitación Simple</h3>
+      <div class="col-12 pad-top-25">
+        <div class="col-6 pad-right-15">
+          <a href="#modal-simple-1"><img src="images/habitaciones/simple-1.jpg" alt="simple-1"></a>
+        </div>
+        <div class="col-6 pad-left-15 font-14 left">
+          <h4 class="left pad-bot-15 center">Descripción</h4>
+          <p>Elegante habitación de 39 m2, con vista hacia la Ciudad de Mendoza. Capacidad para 1 persona. Cuenta con escritorio de trabajo, mesa, silla ergonómica y sillón de lectura, Pantalla LCD 32, climatización frío/calor con regulador individual, caja de seguridad para lap-top, minibar, acceso a wi-fi sin cargo. Además, amplio baño con finas terminaciones en distintos tipo de mármol, bañera de inmersión y ducha individual, secador de cabello, espejo de aumento y teléfono.</p>
+        </div>
+      </div>
+      <div class="col-12 mar-top-25 font-14">
+        <div class="col-6 pad-right-15">
+          <a href="#modal-simple-2"><img src="images/habitaciones/doble-2.jpg" alt="doble-2"></a>
+        </div>
+        <div class="col-6 pad-left-15 left">
+          <h4 class="left pad-bot-15 center">Servicios</h4>
+          <div class="col-6">
+            <ul>
+              <li class="tamaño pad-left-25 pad-bot-15"><b>Tamaño</b><span class="block">39 m<sup>2</sup></span></li>
+              <li class="tv pad-left-25 pad-bot-15"><b>TV</b><span class="block">Si</span></li>
+              <li class="baño pad-left-25 pad-bot-15"><b>Baño Privado</b><span class="block">Si</span></li>
+            </ul>
+          </div>
+          <div class="col-6 pad-left-25 pad-bot-15">
+            <ul>
+              <li class="fuma pad-left-25 pad-bot-15"><b>Fumadores</b><span class="block">No</span></li>
+              <li class="wifi pad-left-25 pad-bot-15"><b>Wi-Fi</b><span class="block">Internet WIFI en áreas comunes y en habitación</span></li>
+              <li class="seguridad pad-left-25 pad-bot-15"><b>Caja de Seguridad</b><span class="block">Si</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-doble" class="modal">
+    <div class="container-modal">
+      <a href="#/" class="x-modal">x</a>
+      <h3 class="titulo-habitacion center">Habitación Doble</h3>
+      <div class="col-12 pad-top-25">
+        <div class="col-6 pad-right-15">
+          <a href="#modal-doble-1"><img src="images/habitaciones/doble-1.jpg" alt="doble-1"></a>
+        </div>
+        <div class="col-6 pad-left-15 font-14 left">
+          <h4 class="left pad-bot-15 center">Descripción</h4>
+          <p>Habitación más amplia de 47 m², con vista a la Ciudad de Mendoza. Dispone de 1 cama doble o 2 camas individuales. Cuenta con: teléfono, Smart TV, caja fuerte, escritorio de trabajo, silla ergonómica, mesa y sillón de lectura, minibar, climatización frío/ calor con regulador individual, acceso a wi-fi sin cargo. Además, amplio baño con finas terminaciones en distintos tipo de mármol, secador de pelo, teléfono.</p>
+        </div>
+      </div>
+      <div class="col-12 mar-top-25 font-14">
+        <div class="col-6 pad-right-15">
+          <a href="#modal-doble-2"><img src="images/habitaciones/doble-2.jpg" alt="doble-2"></a>
+        </div>
+        <div class="col-6 pad-left-15 left">
+          <h4 class="left pad-bot-15 center">Servicios</h4>
+          <div class="col-6">
+            <ul>
+              <li class="tamaño pad-left-25 pad-bot-15"><b>Tamaño</b><span class="block">47 m<sup>2</sup></span></li>
+              <li class="tv pad-left-25 pad-bot-15"><b>TV</b><span class="block">Si</span></li>
+              <li class="seguridad pad-left-25 pad-bot-15"><b>Caja de Seguridad</b><span class="block">Si</span></li>
+            </ul>
+          </div>
+          <div class="col-6 pad-left-25 pad-bot-15">
+            <ul>
+              <li class="fuma pad-left-25 pad-bot-15"><b>Fumadores</b><span class="block">No</span></li>
+              <li class="wifi pad-left-25 pad-bot-15"><b>Wi-Fi</b><span class="block">Internet WIFI en áreas comunes y en habitación</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-triple" class="modal">
+    <div class="container-modal">
+      <a href="#/" class="x-modal">x</a>
+      <h3 class="titulo-habitacion center">Habitación Triple</h3>
+      <div class="col-12 pad-top-25">
+        <div class="col-6 pad-right-15">
+          <a href="#modal-triple-1"><img src="images/habitaciones/triple-1.jpg" alt="triple-1"></a>
+        </div>
+        <div class="col-6 pad-left-15 font-14 left">
+          <h4 class="left pad-bot-15 center">Descripción</h4>
+          <p>Habitación más amplia de 47 m². Admite hasta 3 huéspedes, con vista hacia la Cordillera de los Andes. Cuenta con: teléfono, Smart TV, caja de seguridad para lap-top, escritorio de trabajo, silla ergonómica, mesa y sillón de lectura, minibar, climatización frío/ calor con regulador individual, acceso a wi-fi sin cargo. Además, amplio baño con finas terminaciones en distintos tipo de mármol, secador de pelo, teléfono.</p>
+        </div>
+      </div>
+      <div class="col-12 mar-top-25 font-14">
+        <div class="col-6 pad-right-15">
+          <a href="#modal-triple-2"><img src="images/habitaciones/triple-2.jpg" alt="triple-2"></a>
+        </div>
+        <div class="col-6 pad-left-15 left">
+          <h4 class="left pad-bot-15 center">Servicios</h4>
+          <div class="col-6">
+            <ul>
+              <li class="tamaño pad-left-25 pad-bot-15"><b>Tamaño</b><span class="block">47 m<sup>2</sup></span></li>
+              <li class="tv pad-left-25 pad-bot-15"><b>TV</b><span class="block">Si</span></li>
+            </ul>
+          </div>
+          <div class="col-6 pad-left-25 pad-bot-15">
+            <ul>
+              <li class="fuma pad-left-25 pad-bot-15"><b>Fumadores</b><span class="block">No</span></li>
+              <li class="wifi pad-left-25 pad-bot-15"><b>Wi-Fi</b><span class="block">Internet WIFI en áreas comunes y en habitación</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="modal-grupal" class="modal">
+    <div class="container-modal">
+      <a href="#/" class="x-modal">x</a>
+      <h3 class="titulo-habitacion center">Habitación Grupal</h3>
+      <div class="col-12 pad-top-25">
+        <div class="col-6 pad-right-15">
+          <a href="#modal-grupal-1"><img src="images/habitaciones/grupal-1.jpg" alt="grupal-1"></a>
+        </div>
+        <div class="col-6 pad-left-15 font-14 left">
+          <h4 class="left pad-bot-15 center">Descripción</h4>
+          <p>Habitación de 39 m2 con capacidad para 4 personas en 2 camas matrimoniales, con vista a la Cordillera de los Andes. Cuenta con: escritorio de trabajo, silla ergonómica, mesa y sillón de lectura, pantalla LCD 32, climatización frío/ calor con regulador individual, acceso a wi-fi sin cargo, minibar, caja de seguridad para lap-top. Además, amplio baño con finas terminaciones en distintos tipo de mármol, bañera de inmersión y ducha individual, secador de cabello, espejo de aumento y teléfono.</p>
+        </div>
+      </div>
+      <div class="col-12 mar-top-25 font-14">
+        <div class="col-6 pad-right-15">
+          <a href="#modal-grupal-2"><img src="images/habitaciones/grupal-2.jpg" alt="grupal-2"></a>
+        </div>
+        <div class="col-6 pad-left-15 left">
+          <h4 class="left pad-bot-15 center">Servicios</h4>
+          <div class="col-6">
+            <ul>
+              <li class="tamaño pad-left-25 pad-bot-15"><b>Tamaño</b><span class="block">39 m<sup>2</sup></span></li>
+              <li class="tv pad-left-25 pad-bot-15"><b>TV</b><span class="block">Si</span></li>
+              <li class="baño pad-left-25 pad-bot-15"><b>Baño Privado</b><span class="block">Si</span></li>
+            </ul>
+          </div>
+          <div class="col-6 pad-left-25 pad-bot-15">
+            <ul>
+              <li class="fuma pad-left-25 pad-bot-15"><b>Fumadores</b><span class="block">No</span></li>
+              <li class="wifi pad-left-25 pad-bot-15"><b>Wi-Fi</b><span class="block">Internet WIFI en áreas comunes y en habitación</span></li>
+              <li class="cocina pad-left-25 pad-bot-15"><b>Cocina</b><span class="block">Si</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+  <div id="modal-entradas" class="modal">
+    <div class="container-modal">
+      <a href="#/" class="x-modal">x</a>
+      <h3 class="titulo-carta center">Entradas</h3>
+      <img src="images/iconos/linea-divisora.png" alt="" class="pad-bot-15">
+      <div class="col-12 left">
+        <div class="col-6 pad-right-25">
+          <h4 class="pad-bot-15 center">Picadas</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Picada Dreams (jamón crudo, matambre casero, salame tandilero, longaniza, morcilla criolla, queso fontina, roquefort, palmitos, palta, ensalada rusa y aceitunas)</li>
+            <li class="checked pad-left-25 pad-bot-15">Picada de jamón crudo con rúcula, oliva y parmesano</li>
+            <li class="checked pad-left-25 pad-bot-15">Picada de salame tandilero y longaniza con queso fontina</li>
+            <li class="checked pad-left-25 pad-bot-15">Picada de matambre casero arrollado con rusa</li>
+            <li class="checked pad-left-25 pad-bot-15">Aceitunas rellenas apanadas</li>
+            <li class="checked pad-left-25 pad-bot-15">Picada de fontina, salame tandilero, longaniza y jamón crudo, con ajíes dulces y cebollita</li>
+          </ul>
+          <h4 class="pad-bot-15 center">Quesos a las brasas</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Provolone a la parrilla con panceta ahumada y pimientos asados</li>
+            <li class="checked pad-left-25 pad-bot-15">Provolone a la parrilla con jamón crudo y tomate seco</li>
+            <li class="checked pad-left-25 pad-bot-15">Provolone a la parrilla oreganado</li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <h4 class="pad-bot-15 center">Parrilladitas de entrada</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Mollejas a la parrilla al limón, acompañadas de salsa criolla y chimichurri</li>
+            <li class="checked pad-left-25 pad-bot-15">Choricitos y morcillas</li>
+            <li class="checked pad-left-25 pad-bot-15">Chinchulines de ternera</li>
+            <li class="checked pad-left-25 pad-bot-15">Parrilladita de achuras</li>
+          </ul>
+          <h4 class="pad-bot-15 center">Individuales</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Empanadas de carne o muzzarella con cebolla y albahaca</li>
+            <li class="checked pad-left-25 pad-bot-15">Empanadas de entrañas con cebollita de verdeo</li>
+          </ul>
+          <h4 class="pad-bot-15 center">Entradas de Mariscos</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Rabas a la Romana</li>
+            <li class="checked pad-left-25 pad-bot-15">Picada de mariscos</li>
+            <li class="checked pad-left-25 pad-bot-15">Palta con camarones</li>
+          </ul>
+        </div>
+      </div>    
+    </div>
+  </div>
+  <div id="modal-acomp" class="modal">
+    <div class="container-modal">
+      <a href="#/" class="x-modal">x</a>
+      <h3 class="titulo-carta center">Para Acompañar</h3>
+      <img src="images/iconos/linea-divisora.png" alt="" class="pad-bot-15">
+      <div class="col-12 left">
+        <div class="col-6 pad-right-25">
+          <h4 class="pad-bot-15 center">Guarniciones</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Puré de papas o zapallo</li>
+            <li class="checked pad-left-25 pad-bot-15">Papas al natural</li>
+            <li class="checked pad-left-25 pad-bot-15">Papas a la crema</li>
+            <li class="checked pad-left-25 pad-bot-15">Papas fritas</li>
+            <li class="checked pad-left-25 pad-bot-15">Papas fritas a la provenzal</li>
+            <li class="checked pad-left-25 pad-bot-15">Papas rústicas</li>
+            <li class="checked pad-left-25 pad-bot-15">Papas fritas rejillas o paille</li>
+          </ul>
+          <h4 class="pad-bot-15 pad-top-15 center">Ensaladas Individuales</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Tomate – Achicoria – Lechuga – Apio – Berro – Repollo – Zanahoria – Rabanito – Pepino – Cebollita de verdeo</li>
+            <li class="checked pad-left-25 pad-bot-15">Pinchos de verduras asadas (zucchini, papa, berenjena, tomate cebolla y pimiento)</li>
+            <li class="checked pad-left-25 pad-bot-15">Pimientos, cebollas y berenjenas asados</li>
+            <li class="checked pad-left-25 pad-bot-15">Rusa</li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <h4 class="pad-bot-15 center">Ensaladas Especiales</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">DE LA CHACRA  |  Achicoria, Rúcula, Endivia y Queso parmesano rallado</li>
+            <li class="checked pad-left-25 pad-bot-15">DE LA REGIÓN  |  Pimiento asado, Tomate seco, Provolone, Rúcula, Cebollita de verdeo</li>
+            <li class="checked pad-left-25 pad-bot-15">VERDURAS GRILLADAS CON QUESO MUZZARELA GRATINADO  | Pimiento asado, Berenjenas asadas, Cebolla asada</li>
+            <li class="checked pad-left-25 pad-bot-15">DE LA HUERTA  |  Endivia, Tomate con albahaca, Lechuga roja (polo rosa), Rúcula con parmesano rallado</li>
+            <li class="checked pad-left-25 pad-bot-15">DEL MONTAÑES  |  Peras grilladas, Roquefort, Endivia, Rúcula, Palta, Pasas de uva rubia</li>
+            <li class="checked pad-left-25 pad-bot-15">DEL CAMPO  |  Palta, Palmito, Fontina, Jamón crudo, Rúcula</li>
+            <li class="checked pad-left-25 pad-bot-15">WALDORF  |  Palmitos, Palta, Manzana, Apio, Roquefort, Nueces, Crema de leche</li>
+            <li class="checked pad-left-25 pad-bot-15">DEL MAR  |  Kani Kama, Camarones, Mejillones, Ananá, Huevo, Tomate</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-carnes" class="modal">
+    <div class="container-modal">
+      <a href="#/" class="x-modal">x</a>
+      <h3 class="titulo-carta center">Carnes</h3>
+      <img src="images/iconos/linea-divisora.png" alt="" class="pad-bot-15">
+      <div class="col-12 left">
+        <div class="col-6 pad-right-25">
+          <h4 class="left pad-bot-15 center">Parrillada</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Parrillada</li>
+          </ul>
+          <h4 class="left pad-bot-15 pad-top-15 center">Corte de Carne Vacuna</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Bife de lomo o filet</li>
+            <li class="checked pad-left-25 pad-bot-15">Bife de lomo veteado</li>
+            <li class="checked pad-left-25 pad-bot-15">Bife de chorizo</li>
+            <li class="checked pad-left-25 pad-bot-15">Ojo de bife</li>
+            <li class="checked pad-left-25 pad-bot-15">Entrecot</li>
+            <li class="checked pad-left-25 pad-bot-15">Asado de tira</li>
+            <li class="checked pad-left-25 pad-bot-15">Asado de vacio</li>
+            <li class="checked pad-left-25 pad-bot-15">Asado de entrañas</li>
+          </ul>
+          <h4 class="left pad-bot-15 pad-top-15 center">Cerdo, Chivito y Pollo</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Punta de espalda de cerdo</li>
+            <li class="checked pad-left-25 pad-bot-15">Pollo deshuesado al limón</li>
+            <li class="checked pad-left-25 pad-bot-15">Chivito a la parrilla</li>
+            <li class="checked pad-left-25 pad-bot-15">Lechoncito a la parrilla</li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <h4 class="left pad-bot-15 center">Brochettes </h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Lomo, cerdo, pollo y ciruela</li>
+            <li class="checked pad-left-25 pad-bot-15">De Lomo</li>
+            <li class="checked pad-left-25 pad-bot-15">De Molleja</li>
+            <li class="checked pad-left-25 pad-bot-15">De Pollo</li>
+          </ul>
+          <h4 class="left pad-bot-15 pad-top-15 center">Pescados a las brasas</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Dorado</li>
+            <li class="checked pad-left-25 pad-bot-15">Trucha</li>
+            <li class="checked pad-left-25 pad-bot-15">Abadejo</li>
+            <li class="checked pad-left-25 pad-bot-15">Salmón Rosado</li>
+            <li class="checked pad-left-25 pad-bot-15">Brochette de Salmón Rosado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-elaborados" class="modal">
+    <div class="container-modal">
+      <a href="#/" class="x-modal">x</a>
+      <h3 class="titulo-carta center">Elaborados</h3>
+      <img src="images/iconos/linea-divisora.png" alt="" class="pad-bot-15">
+      <div class="col-12 left">
+        <div class="col-6 pad-right-25">
+          <h4 class="left pad-bot-15 center">Carnes a las brasas</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Lomo a la pimienta</li>
+            <li class="checked pad-left-25 pad-bot-15">Lomo con salsa de champignones y espárragos salteados</li>
+            <li class="checked pad-left-25 pad-bot-15">Lomo al roquefort</li>
+            <li class="checked pad-left-25 pad-bot-15">Lomo Dreams</li>
+            <li class="checked pad-left-25 pad-bot-15">Solomillo de cerdo</li>
+            <li class="checked pad-left-25 pad-bot-15">Matambre tiernizado a la pizza</li>
+            <li class="checked pad-left-25 pad-bot-15">Punta de espalda de cerdo a la mostaza</li>
+            <li class="checked pad-left-25 pad-bot-15">Punta de espalda de cerdo</li>
+            <li class="checked pad-left-25 pad-bot-15">Mollejas</li>
+            <li class="checked pad-left-25 pad-bot-15">Pamplona de pollo</li>
+            <li class="checked pad-left-25 pad-bot-15">Pollo deshuesado con salsa de champignones</li>
+            <li class="checked pad-left-25 pad-bot-15">Merluza a la Romana</li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <h4 class="left pad-bot-15 center">Milanesas</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Milanesa de lomo</li>
+            <li class="checked pad-left-25 pad-bot-15">Milanesa de lomo a la napolitana</li>
+            <li class="checked pad-left-25 pad-bot-15">Milanesa de pollo</li>
+          </ul>
+          <h4 class="left pad-bot-15 pad-top-15 center">Pastas</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Tallarines con salsa de mariscos</li>
+            <li class="checked pad-left-25 pad-bot-15">Canelones de verdura a la rossini</li>
+            <li class="checked pad-left-25 pad-bot-15">Lasagna a la napolitana</li>
+            <li class="checked pad-left-25 pad-bot-15">Capellettis a la carusso</li>
+            <li class="checked pad-left-25 pad-bot-15">Ravioles de carne a la bolognesa</li>
+            <li class="checked pad-left-25 pad-bot-15">Ñoquis con salsa rosada</li>
+          </ul>         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-postres" class="modal">
+    <div class="container-modal">
+      <a href="#/" class="x-modal">x</a>
+      <h3 class="titulo-carta center">Postres</h3>
+      <img src="images/iconos/linea-divisora.png" alt="" class="pad-bot-15">
+      <div class="col-12 left">
+        <div class="col-6 pad-right-25">
+          <h4 class="left pad-bot-15 center">Postres</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Tiramisú</li>
+            <li class="checked pad-left-25 pad-bot-15">Peras en almíbar con helado</li>
+            <li class="checked pad-left-25 pad-bot-15">Flan casero</li>
+            <li class="checked pad-left-25 pad-bot-15">Mousse de chocolate</li>
+            <li class="checked pad-left-25 pad-bot-15">Ensalada de frutas</li>
+            <li class="checked pad-left-25 pad-bot-15">Frutillas con crema</li>
+            <li class="checked pad-left-25 pad-bot-15">Almendrado</li>
+            <li class="checked pad-left-25 pad-bot-15">Helado mixto</li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <h4 class="left pad-bot-15 center">Copas Especiales</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Copa Dreams</li>
+            <li class="checked pad-left-25 pad-bot-15">Copa Jamaica (Tía María-Helado de dulce de leche)</li>
+            <li class="checked pad-left-25 pad-bot-15">Copa irlandesa (Licor cream-Helado de frutilla)</li>
+            <li class="checked pad-left-25 pad-bot-15">Ensalada de frutas con helado</li>
+            <li class="checked pad-left-25 pad-bot-15">Don Pedro</li>
+          </ul>
+          <h4 class="left pad-bot-15 pad-top-15 center">Postres en Almibar y Dulces</h4>
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Alcayota con nueces y queso fontina</li>
+            <li class="checked pad-left-25 pad-bot-15">Dulces de la región</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-vinos" class="modal">
+    <div class="container-modal">
+      <a href="#/" class="x-modal">x</a>
+      <h3 class="titulo-carta center">Vinos</h3>
+      <img src="images/iconos/linea-divisora.png" alt="" class="pad-bot-15">
+      <div class="col-12 left">
+        <div class="col-6 pad-right-25">
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Viejo Isaías</li>
+            <li class="checked pad-left-25 pad-bot-15">Rutini</li>
+            <li class="checked pad-left-25 pad-bot-15">Estancia Mendoza</li>
+            <li class="checked pad-left-25 pad-bot-15">Terrazas</li>
+            <li class="checked pad-left-25 pad-bot-15">Vistalba</li>
+            <li class="checked pad-left-25 pad-bot-15">Doña Paula</li>
+            <li class="checked pad-left-25 pad-bot-15">Pulenta Estate</li>
+            <li class="checked pad-left-25 pad-bot-15">Bianchi</li>
+            <li class="checked pad-left-25 pad-bot-15">Catena Zapata</li>
+            <li class="checked pad-left-25 pad-bot-15">Viña Cobos</li>
+            <li class="checked pad-left-25 pad-bot-15">Alta Vista</li>
+            <li class="checked pad-left-25 pad-bot-15">Salentein</li>
+            <li class="checked pad-left-25 pad-bot-15">Norton</li>
+            <li class="checked pad-left-25 pad-bot-15">Viñas las Perdices</li>
+            <li class="checked pad-left-25 pad-bot-15">Fabre Montmayou</li>
+            <li class="checked pad-left-25 pad-bot-15">Mendel</li>
+            <li class="checked pad-left-25 pad-bot-15">Lurton</li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <ul>
+            <li class="checked pad-left-25 pad-bot-15">Trapiche</li>
+            <li class="checked pad-left-25 pad-bot-15">Casarena</li>
+            <li class="checked pad-left-25 pad-bot-15">Luigi Bosca</li>
+            <li class="checked pad-left-25 pad-bot-15">Los Haroldos</li>
+            <li class="checked pad-left-25 pad-bot-15">Lagarde</li>
+            <li class="checked pad-left-25 pad-bot-15">Flechas de los Andes</li>
+            <li class="checked pad-left-25 pad-bot-15">Kaiken</li>
+            <li class="checked pad-left-25 pad-bot-15">Familia Zuccardi</li>
+            <li class="checked pad-left-25 pad-bot-15">Vinorum</li>
+            <li class="checked pad-left-25 pad-bot-15">Santa Julia</li>
+            <li class="checked pad-left-25 pad-bot-15">La Rural</li>
+            <li class="checked pad-left-25 pad-bot-15">Sin Fin</li>
+            <li class="checked pad-left-25 pad-bot-15">Staphyle</li>
+            <li class="checked pad-left-25 pad-bot-15">Chandon</li>
+            <li class="checked pad-left-25 pad-bot-15">Eclipse</li>
+            <li class="checked pad-left-25 pad-bot-15">Noche y Día</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-simple-1" class="modal">
+    <div class="container-modal-img">
+      <a href="#modal-simple" class="x-modal-img">x</a>
+      <img src="images/habitaciones/simple-1.jpg" alt="">
+    </div>
+  </div>
+  <div id="modal-simple-2" class="modal">
+    <div class="container-modal-img">
+      <a href="#modal-simple" class="x-modal-img">x</a>
+      <img src="images/habitaciones/simple-2.jpg" alt="">
+    </div>
+  </div>
+  <div id="modal-doble-1" class="modal">
+    <div class="container-modal-img">
+      <a href="#modal-doble" class="x-modal-img">x</a>
+      <img src="images/habitaciones/doble-1.jpg" alt="">
+    </div>
+  </div>
+  <div id="modal-doble-2" class="modal">
+    <div class="container-modal-img">
+      <a href="#modal-doble" class="x-modal-img">x</a>
+      <img src="images/habitaciones/doble-2.jpg" alt="">
+    </div>
+  </div>
+  <div id="modal-triple-1" class="modal">
+    <div class="container-modal-img">
+      <a href="#modal-triple" class="x-modal-img">x</a>
+      <img src="images/habitaciones/triple-1.jpg" alt="">
+    </div>
+  </div>
+  <div id="modal-triple-2" class="modal">
+    <div class="container-modal-img">
+      <a href="#modal-triple" class="x-modal-img">x</a>
+      <img src="images/habitaciones/triple-2.jpg" alt="">
+    </div>
+  </div>
+  <div id="modal-grupal-1" class="modal">
+    <div class="container-modal-img">
+      <a href="#modal-grupal" class="x-modal-img">x</a>
+      <img src="images/habitaciones/grupal-1.jpg" alt="">
+    </div>
+  </div>
+  <div id="modal-grupal-2" class="modal">
+    <div class="container-modal-img">
+      <a href="#modal-grupal" class="x-modal-img">x</a>
+      <img src="images/habitaciones/grupal-2.jpg" alt="">
+    </div>
+  </div>
+</body>
+</html>
